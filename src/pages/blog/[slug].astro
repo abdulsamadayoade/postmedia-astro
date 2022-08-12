@@ -1,0 +1,26 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import PostHeader from "../../components/Blog/PostHeader.astro";
+import PostContent from "../../components/Blog/PostContent.astro";
+import '../../styles/globals.scss'
+import { posts } from "../../posts/posts";
+
+export async function getStaticPaths() {
+    const paths = posts.map(post => ({
+        params: {
+            slug: post.slug
+        }
+    }));
+
+    return paths;
+}
+---
+
+<Layout title="Blog - PostMedia" description="Digital Marketing Agency">
+    <Navbar />
+    <main>
+        <PostHeader />
+        <PostContent />
+    </main>
+</Layout>

@@ -1,0 +1,60 @@
+---
+import authorImg from "/media/author.jpg";
+---
+
+<header>
+    <div class="container">
+        <h1>
+            Why having a blog on your
+            website is more important
+            than ever
+        </h1>
+
+        <div class="author-details">
+            <div>
+                <img src={authorImg} alt="author" />
+            </div>
+            <div>
+                <p>Written&nbsp; by &nbsp; James Doe</p>
+                <p>March&nbsp; 2022</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<style lang='scss'>
+    header {
+        padding: 5rem 0;
+        margin-bottom: 5rem;
+    }
+
+    h1 {
+        font-size: 7.5rem;
+        font-weight: 500;
+        max-width: 80rem;
+        margin-bottom: 3rem;
+        line-height: 1.1;
+        letter-spacing: -5px;
+    }
+
+    .author-details {
+        display: flex;
+        align-items: center;
+
+        div {
+            margin-right: 1rem;
+        }
+
+        img {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        p {
+            text-transform: uppercase;
+            font-size: 1.2rem;
+        }
+    }
+</style>
