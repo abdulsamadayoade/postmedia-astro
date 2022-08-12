@@ -1,75 +1,77 @@
 @font-face {
-    font-family: 'GT Walsheim Pro';
-    src: url('/fonts/GTWalsheimPro-Medium.woff2') format('woff2'),
-        url('/fonts/GTWalsheimPro-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+	font-family: "GT Walsheim Pro";
+	src: url("/fonts/GTWalsheimPro-Medium.woff2") format("woff2"),
+		url("/fonts/GTWalsheimPro-Medium.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'GT Walsheim Pro';
-    src: url('/fonts/GTWalsheimPro-Bold.woff2') format('woff2'),
-        url('/fonts/GTWalsheimPro-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+	font-family: "GT Walsheim Pro";
+	src: url("/fonts/GTWalsheimPro-Bold.woff2") format("woff2"),
+		url("/fonts/GTWalsheimPro-Bold.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'GT Walsheim Pro';
-    src: url('/fonts/GTWalsheimPro-Regular.woff2') format('woff2'),
-        url('/fonts/GTWalsheimPro-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+	font-family: "GT Walsheim Pro";
+	src: url("/fonts/GTWalsheimPro-Regular.woff2") format("woff2"),
+		url("/fonts/GTWalsheimPro-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Switzer';
-    src: url('/fonts/Switzer-Regular.woff2') format('woff2'),
-        url('/fonts/Switzer-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+	font-family: "Switzer";
+	src: url("/fonts/Switzer-Regular.woff2") format("woff2"),
+		url("/fonts/Switzer-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Switzer';
-    src: url('/fonts/Switzer-Medium.woff2') format('woff2'),
-        url('/fonts/Switzer-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+	font-family: "Switzer";
+	src: url("/fonts/Switzer-Medium.woff2") format("woff2"),
+		url("/fonts/Switzer-Medium.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
 }
 
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
 }
 
 :root {
-    --black-color: #000000;
-    --white-color: #ffffff;
-    --blue-primary-color: #152766;
-    --red-color: #FFC2C7;
-    --background-color: #EEEAEA;
+	--black-color: #000000;
+	--white-color: #ffffff;
+	--blue-primary-color: #152766;
+	--red-color: #ffc2c7;
+	--background-color: #eeeaea;
 
-    --heading-font: 'GT Walsheim Pro', sans-serif;
-    --body-font: 'Switzer', sans-serif;
+	--heading-font: "GT Walsheim Pro", sans-serif;
+	--body-font: "Switzer", sans-serif;
+
+	--transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html {
-    font-size: 10px;
+	font-size: 10px;
 }
 
 body {
-    box-sizing: border-box;
-    font-family: var(--body-font);
-    font-size: 1.6rem;
+	box-sizing: border-box;
+	font-family: var(--body-font);
+	font-size: 1.6rem;
 }
 
 h1,
@@ -78,31 +80,75 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: var(--heading-font);
+	font-family: var(--heading-font);
 }
 
 ul {
-    list-style: none;
+	list-style: none;
 }
 
 a {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 img {
-    max-width: 100%;
+	max-width: 100%;
 }
 
-buttom {
-    border: none;
-    outline: none;
-    font-family: var(--body-font);
-    font-size: 1.4rem;
+button {
+	border: none;
+	outline: none;
+	font-family: var(--body-font);
+	font-size: 1.4rem;
+    cursor: pointer;
 }
 
 // UTILITY CLASSES
 .container {
-    max-width: 135rem;
-    margin: 0 auto;
-    padding: 0 2rem;
+	max-width: 135rem;
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+
+.button {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-weight: 500;
+	border: 1px solid var(--blue-primary-color);
+	border-radius: 5rem;
+	padding: 0.5rem 1rem;
+	text-transform: uppercase;
+	font-size: 1.3rem;
+	letter-spacing: 1px;
+	color: var(--blue-primary-color);
+    background-color: transparent;
+    transition: var(--transition);
+
+    &:hover {
+        background-color: var(--blue-primary-color);
+        color: var(--white-color);
+    }
+
+	span:last-child {
+		width: 2.5rem;
+		height: 2.5rem;
+		border-radius: 50%;
+		background-color: var(--blue-primary-color);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		transition: var(--transition);
+	}
+
+	svg {
+		transition: var(--transition);
+	}
+
+	&:hover {
+		svg {
+            transform: rotate(-5deg);
+		}
+	}
 }

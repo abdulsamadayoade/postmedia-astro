@@ -20,7 +20,7 @@ import BlogImg3 from "/media/blog_3.webp";
                             incorporate more personalisation into your marketing.
                         </p>
                     </div>
-                    <div class="read-more">
+                    <div class="button">
                         <span>Read More</span>
                         <span>
                             <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out group-hover:translate-x-[50px] group-hover:translate-y-[-50px]"
@@ -46,7 +46,7 @@ import BlogImg3 from "/media/blog_3.webp";
                             incorporate more personalisation into your marketing.
                         </p>
                     </div>
-                    <div class="read-more">
+                    <div class="button">
                         <span>Read More</span>
                         <span>
                             <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out group-hover:translate-x-[50px] group-hover:translate-y-[-50px]"
@@ -72,7 +72,7 @@ import BlogImg3 from "/media/blog_3.webp";
                             incorporate more personalisation into your marketing.
                         </p>
                     </div>
-                    <div class="read-more">
+                    <div class="button">
                         <span>Read More</span>
                         <span>
                             <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out group-hover:translate-x-[50px] group-hover:translate-y-[-50px]"
@@ -98,7 +98,7 @@ import BlogImg3 from "/media/blog_3.webp";
                             incorporate more personalisation into your marketing.
                         </p>
                     </div>
-                    <div class="read-more">
+                    <div class="button">
                         <span>Read More</span>
                         <span>
                             <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out group-hover:translate-x-[50px] group-hover:translate-y-[-50px]"
@@ -124,7 +124,7 @@ import BlogImg3 from "/media/blog_3.webp";
                             incorporate more personalisation into your marketing.
                         </p>
                     </div>
-                    <div class="read-more">
+                    <div class="button">
                         <span>Read More</span>
                         <span>
                             <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out group-hover:translate-x-[50px] group-hover:translate-y-[-50px]"
@@ -150,17 +150,16 @@ import BlogImg3 from "/media/blog_3.webp";
                             incorporate more personalisation into your marketing.
                         </p>
                     </div>
-                    <div class="read-more">
+                    <button class="button">
                         <span>Read More</span>
                         <span>
-                            <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out group-hover:translate-x-[50px] group-hover:translate-y-[-50px]"
-                                width="8" height="8" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="8" height="8" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M8.57072 0.0861157L2.52097 0.0810699L2.50943 1.11517L6.80878 1.11738L0.321655 7.6045L1.05233 8.33518L7.5397 1.84781L7.54413 6.15052L8.57577 6.13512L8.57072 0.0861157Z"
                                     fill="#ffffff" stroke-width="0.2px" stroke="#ffffff"></path>
                             </svg>
                         </span>
-                    </div>
+                    </button>
                 </div>
             </a>
         </div>
@@ -179,7 +178,7 @@ import BlogImg3 from "/media/blog_3.webp";
             border-radius: 2rem;
             display: block;
             margin-bottom: 3rem;
-            height: 45rem;
+            min-height: 45rem;
             object-fit: cover;
         }
 
@@ -189,6 +188,8 @@ import BlogImg3 from "/media/blog_3.webp";
             >div {
                 display: flex;
                 flex-direction: column;
+                justify-content: space-between;
+                height: 30rem;
             }
 
             p:first-of-type {
@@ -199,45 +200,8 @@ import BlogImg3 from "/media/blog_3.webp";
             }
         }
 
-        .read-more {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 500;
-            margin-top: 3rem;
-            border: 1px solid var(--blue-primary-color);
-            border-radius: 5rem;
-            padding: .5rem 1rem;
-            text-transform: uppercase;
-            font-size: 1.3rem;
-            letter-spacing: 1px;
-            color: var(--blue-primary-color);
-
-            span:last-child {
-                width: 2.5rem;
-                height: 2.5rem;
-                border-radius: 50%;
-                background-color: var(--blue-primary-color);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                overflow: hidden;
-                transition: all .5s cubic-bezier(.4, 0, .2, 1);
-            }
-
-            svg {
-                transition: all .5s cubic-bezier(.4, 0, .2, 1);
-            }
-
-            &:hover {
-                svg {
-                    transform: translate3d(15px, -15px, 0);
-                }
-
-                span:last-child {
-                    opacity: 0;
-                }
-            }
+        .button {
+            margin-top: 5rem;
         }
     }
 </style>
