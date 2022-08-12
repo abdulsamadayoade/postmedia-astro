@@ -1,0 +1,122 @@
+---
+import blueLogo from "/media/postmedia_blue_logo.svg";
+
+const { link } = Astro.props
+---
+
+<nav class="nav">
+    <div class="container">
+        <div class="nav__inner">
+            <a href="/" class="nav__logo">
+                <img src={blueLogo} alt="logo" />
+            </a>
+
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="/works" class="nav__link">Works</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="/about" class="nav__link">About</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="/services" class="nav__link">Services</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="/blog" class="nav__link">Blog</a>
+                </li>
+            </ul>
+
+            <a href="/contact" class="nav__cta">
+                <span>Contact</span>
+                <span>
+                    <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out group-hover:translate-x-[50px] group-hover:translate-y-[-50px]"
+                        width="8" height="8" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M8.57072 0.0861157L2.52097 0.0810699L2.50943 1.11517L6.80878 1.11738L0.321655 7.6045L1.05233 8.33518L7.5397 1.84781L7.54413 6.15052L8.57577 6.13512L8.57072 0.0861157Z"
+                            fill="#ffffff" stroke-width="0.2px" stroke="#ffffff"></path>
+                    </svg>
+                </span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<style lang="scss">
+    .nav {
+        &__inner {
+            height: 10rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &__logo {
+            img {
+                width: 18rem;
+            }
+        }
+
+        &__list {
+            display: flex;
+            align-items: center;
+        }
+
+        &__item {
+            &:not(:last-child) {
+                margin-right: 5rem;
+            }
+        }
+
+        &__link {
+            color: var(--blue-primary-color);
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        &__cta {
+            display: flex;
+            align-items: center;
+
+            span:first-child {
+                text-transform: uppercase;
+                color: var(--blue-primary-color);
+                border: 1.5px solid var(--blue-primary-color);
+                padding: .3rem 1.2rem;
+                letter-spacing: 2px;
+                font-size: 1.3rem;
+                border-radius: 5rem;
+                font-weight: 500;
+                margin-right: 5px;
+            }
+
+            span:last-child {
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 50%;
+                background-color: var(--blue-primary-color);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                transition: all .5s cubic-bezier(.4, 0, .2, 1);
+            }
+
+            svg {
+                transition: all .5s cubic-bezier(.4, 0, .2, 1);
+            }
+
+            &:hover {
+                svg {
+                    transform: translate3d(15px, -15px, 0);
+                }
+
+                span:last-child {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+</style>
