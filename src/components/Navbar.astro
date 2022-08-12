@@ -2,6 +2,32 @@
 import blueLogo from "/media/postmedia_blue_logo.svg";
 
 const { link } = Astro.props
+
+const navLinks = [
+    {
+        name: "Works",
+        path: "/works",
+    },
+    {
+        name: "About",
+        path: "/about",
+    },
+    {
+        name: "Services",
+        path: "/services",
+    },
+    {
+        name: "Blog",
+        path: "/blog"
+    }
+];
+
+const formatActiveLink = (path: string) => {
+    if (path === link) {
+        return "active";
+    }
+}
+
 ---
 
 <nav class="nav">
@@ -12,21 +38,15 @@ const { link } = Astro.props
             </a>
 
             <ul class="nav__list">
+                {
+                navLinks.map((navLink) => {
+                return (
                 <li class="nav__item">
-                    <a href="/works" class="nav__link">Works</a>
+                    <a href={navLink.path} class={`nav__link ${formatActiveLink(navLink.path)}`}>{navLink.name}</a>
                 </li>
-
-                <li class="nav__item">
-                    <a href="/about" class="nav__link">About</a>
-                </li>
-
-                <li class="nav__item">
-                    <a href="/services" class="nav__link">Services</a>
-                </li>
-
-                <li class="nav__item">
-                    <a href="/blog" class="nav__link">Blog</a>
-                </li>
+                )
+                })
+                }
             </ul>
 
             <a href="/contact" class="nav__cta">
@@ -72,8 +92,31 @@ const { link } = Astro.props
 
         &__link {
             color: var(--blue-primary-color);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 500;
+            position: relative;
+            transition: all .5s ease;
+
+            &:hover {
+                opacity: .6;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                background-color: var(--blue-primary-color);
+                bottom: 0;
+                left: 0;
+                display: none;
+            }
+
+            &.active {
+                &::before {
+                    display: block;
+                }
+            }
         }
 
         &__cta {
@@ -90,6 +133,12 @@ const { link } = Astro.props
                 border-radius: 5rem;
                 font-weight: 500;
                 margin-right: 5px;
+                transition: all .5s cubic-bezier(.4, 0, .2, 1);
+
+                &:hover {
+                    background-color: var(--blue-primary-color);
+                    color: var(--white-color);
+                }
             }
 
             span:last-child {
