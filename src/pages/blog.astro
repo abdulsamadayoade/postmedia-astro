@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Header from '../components/Blog/Header.astro';
+import BlogList from '../components/Blog/BlogList.astro';
+import '../styles/globals.scss'
+
+---
+
+<Layout title="Blog - PostMedia" description="Digital Marketing Agency">
+    <main>
+        <Navbar link="blog" />
+        <Header />
+        <BlogList />
+    </main>
+</Layout>
+
+<style>
+    main {
+        background-color: var(--white-color);
+        padding-bottom: 20rem;
+    }
+</style>
