@@ -7,17 +7,18 @@ import '../../styles/globals.scss'
 import { posts } from "../../posts/posts";
 
 export async function getStaticPaths() {
-    const paths = posts.map(post => ({
-        params: {
-            slug: post.slug
-        }
-    }));
-
-    return paths;
+    return posts.map((post) => {
+        return {
+            params: { slug: post.slug },
+            props: { post }
+        };
+    });
 }
+
+const { post } = Astro.props
 ---
 
-<Layout title="Blog - PostMedia" description="Digital Marketing Agency">
+<Layout title={`${post.title} - Blog`} description="Digital Marketing Agency">
     <Navbar />
     <main>
         <PostHeader />
