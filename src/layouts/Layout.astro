@@ -5,6 +5,7 @@ export interface Props {
 }
 
 const { title, description } = Astro.props as Props;
+import Footer from "../components/Footer.astro";
 ---
 
 <!DOCTYPE html>
@@ -20,6 +21,7 @@ const { title, description } = Astro.props as Props;
 
 <body>
 	<slot />
+	<Footer />
 </body>
 
 </html>
